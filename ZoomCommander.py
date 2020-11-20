@@ -8,6 +8,7 @@ from datetime import datetime
 from time import sleep
 from random import shuffle
 
+import os
 import json
 import csv
 import sys
@@ -155,7 +156,10 @@ class ParticipantTimes:
 
 ### APPLESCRIPT/ZOOM COMMUNICATION
 
-with open("ZoomScript.applescript", encoding="utf-8") as f:
+my_dir = os.path.dirname(__file__)
+applescript_lib_file = os.path.join(my_dir, "ZoomScript.applescript")
+
+with open(applescript_lib_file, encoding="utf-8") as f:
     applescript_prelude = f.read()
 
 
@@ -298,7 +302,7 @@ with open("timings.csv", mode="a", encoding="utf-8") as timings_file, open(
     # Main polling loop
 
     while True:
-        sleep(2.0)
+        sleep(4.0)
         now = datetime.now()
         new_state = get_state()
         if not new_state:

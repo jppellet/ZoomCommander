@@ -109,7 +109,7 @@ on getBreakoutRooms()
 						
 						-- flush room data
 						if currentRoomName is not "" then
-							set theRooms's end to {roomName:currentRoomName, participants:currentRoomMembers}
+							set theRooms's end to {room_name:currentRoomName, participants:currentRoomMembers}
 						end if
 						
 						-- init next room
@@ -126,7 +126,7 @@ on getBreakoutRooms()
 			
 			-- flush room data
 			if currentRoomName is not "" then
-				set theRooms's end to {roomName:currentRoomName, participants:currentRoomMembers}
+				set theRooms's end to {room_name:currentRoomName, participants:currentRoomMembers}
 			end if
 			
 		end tell
